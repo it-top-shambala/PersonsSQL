@@ -28,3 +28,16 @@ CREATE TABLE table_persons(
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 );
+
+CREATE VIEW view_persons AS
+SELECT person_id,
+       family AS 'last_name',
+       name AS 'first_name',
+       patronymic
+FROM table_persons
+JOIN table_families
+    ON table_persons.family_id = table_families.family_id
+JOIN table_names
+    ON table_persons.name_id = table_names.name_id
+JOIN table_patronymics
+    ON table_persons.patronymic_id = table_patronymics.patronymic_id;
