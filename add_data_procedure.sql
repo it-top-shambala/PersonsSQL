@@ -44,3 +44,7 @@ SELECT @is_name;
 */
 
 CALL procedure_add_data('Starinin', 'Andrey', 'Nikolaevich');
+CALL procedure_add_data('Starinin', 'Nikolay', 'Ivanovich');
+
+SELECT * FROM view_persons;
+SELECT * FROM table_families;
